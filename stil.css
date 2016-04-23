@@ -1,0 +1,414 @@
+/*
+	Ok folosim un CSS reset pentru ca toate setarile initiale sa fie aceleasi in toate browserele
+	Eric Meyer's Reset CSS v2.0  
+*/
+
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a,
+abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small,
+strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form,
+label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details,
+embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    margin: 0;
+    padding: 0
+}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+    display: block
+}
+body {
+    line-height: 1
+}
+ol,ul {
+    list-style: none
+}
+blockquote,q {
+    quotes: none
+}
+blockquote:before,blockquote:after,
+q:before,q:after {
+    content: none
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+/* Gata cu resetul */
+
+
+/************************
+	CSS-ul aplicatiei
+*************************/
+
+/* Stiluri generale */
+html {
+	font-family: 'Open Sans', Helvetica-Neue, Helvetica, Arial, Tahoma, sans-serif;
+    background-color: #eeeeee;
+}
+
+p {
+    line-height: 1.23em;
+}
+
+a,a:visited {
+	text-decoration: none;
+	color: #485E14;
+    padding: 0.1em 0.3em;
+}
+
+a:hover {
+    border-bottom: 2px solid rgba(0,0,0,0.05);
+}
+
+a:active {
+    color: #62812C;
+}
+
+footer{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+
+/* Titlurile folosite cu h1 pentru fiecare sectiunre */
+.titlu{
+    padding: 1em;
+    color: #62812C;
+    text-transform: uppercase;
+    border-bottom: 2px solid #75dd2b;
+}
+.titlu span{
+  float: right;
+  font-size: 0.7em;
+  color: #75dd2b;
+}
+
+.copyright{
+    font-size:0.8em;
+    color: #aaaaaa;
+}
+
+/* Continut panou de control din index */
+.dashboard{
+    padding: 1em;
+}
+/* Panou notificari */
+.notificare {
+    background-color: #F2FFCC;
+    padding: 1em 0.5em;
+}
+/* Holder-ul de continut */
+.continut {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    min-height: 80% !important;
+}
+
+/* Stiluri pentru meniul principal */
+.meniu {
+    max-width: 1200px;
+	background-color: #75dd2b;
+    margin: 0 auto;
+}
+.meniu-item,.meniu-item:visited {
+	display: inline-block;
+	padding: 1em;
+	text-decoration: none;
+	text-align: center;
+	background-color: transparent;
+	color: #485E14;
+    width: 80px;
+}
+.meniu-item:hover{
+	background-color: rgba(0,0,0,0.05);
+}
+.meniu-item:active{
+	background-color: rgba(0,0,0,0.15);
+}
+.meniu-item i{
+	color: #62812C;
+	font-size: 2em;
+	display: table;
+	margin: 0 auto;
+}
+.activ{
+	background-color: #7fe934;
+	border-bottom: 2px solid #62812C;
+}
+
+.buton{
+    background-color: #62812C;
+    padding: 0.5em 1.5em;
+    border: none;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    border-radius: 20px;
+    cursor:  pointer;
+    margin-bottom:0.5em;
+
+}
+.buton:hover{
+    background-color: #485E14;
+}
+
+.buton-item{
+    background-color: #75DD2B;
+    padding: 0.5em 1.5em;
+    border: none;
+    color: #ffffff;
+    float: right;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    border-radius: 20px;
+    cursor:  pointer;
+    margin-left:1em;
+    margin-top: -0.35em;
+    z-index: 800;
+}
+.buton-item:hover{
+    background-color: #485E14;
+}
+
+/* Stiluri pentru lista producatorilor (rezultate returnate din baza) */
+.rezutate{
+    padding: 0;
+}
+
+.rezultate-item{
+    padding: 1em 1em;
+    cursor: pointer;
+}
+.rezultate-item:nth-child(even){
+    background-color: #FFF5F5;
+}
+.info_nr{
+   float: left;
+   margin-right: 1em;
+   padding:0.1em;
+   border: 1px solid #eeeeee;
+   color: #75dd2b;
+   vertical-align: middle;
+}
+
+.info_nume{
+   float: left;
+   font-weight: 600;
+   margin-right: 1em;
+}
+.info_click{
+    font-size: 0.6em;
+    text-transform: uppercase;
+    color: #aaaaaa;
+    float:right;
+    display:none;
+    vertical-align: middle;
+    padding: 0.5em;
+}
+.info_data{
+    background-color: #cccccc;
+    color:#ffffff;
+    font-size:0.8em;
+    padding:0.3em 0.5em;
+    margin-right: 1em;
+    border-radius: 2px;
+}
+.info_desc{
+    font-size: 0.9em;
+    color: #485E14;
+}
+.info_data_mare{
+    background-color: #cccccc;
+    color:#ffffff;
+    padding:0.3em 0.5em;
+    display: inline;
+    border-radius: 2px;
+    margin-bottom: 1em;
+}
+.info_desc_mare{
+    color: #485E14;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    overflow: hidden;
+  /* Truncheaza dupa un maxim - doar in webkit */
+  /*  text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 11;
+    -webkit-box-orient: vertical; */
+
+}
+
+#detalii_producator{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.15);
+    z-index: 1000;
+}
+
+#grafic{
+    width:100%;	
+    height: 160px;
+
+}
+.graficprod{
+    height: 160px;
+    width:100%;
+    padding-bottom: 1.5em;
+    margin: 0.5em 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+/* Panoul cu informatii si animatia CSS */
+.panou_info{
+    width: 460px;
+    position: relative;
+    margin: 0 auto;
+    padding: 1em;
+    background-color: white;
+    box-shadow: 0px 1px 4px 2px rgba(0,0,0,0.15);
+    animation: panou_anim 0.5s;
+    -webkit-animation: panou_anim 0.5s;
+}
+.panou_info h1{
+    font-size: 2em;
+    margin-bottom:0.5em;
+}
+
+@keyframes panou_anim {
+  from { top:-100px; opacity: 20%; }
+  to { top:0px; opacity: 100%; }
+}
+@-webkit-keyframes panou_anim {
+  from { top:-100px; opacity: 20%; }
+  to { top:0px; opacity: 100%; }
+}
+
+/*****************************
+    Formular de adaugare
+******************************/
+#form_prod{
+    display: -webkit-inline-flex;
+    display: inline-flex;
+}
+
+#den_producator{
+    width: 100%;
+    height: 1.5em;
+    padding: 0.5em;
+    margin-bottom: 1.5em;
+
+}
+#info_producator{
+    width: 260px;
+    margin-bottom: 1.5em;
+
+    margin-right: 2.5em;
+
+}
+#info_detalii{
+    margin-left: 2em;
+}
+
+#data_producator{
+    width: 264px;
+    padding:0.5em;
+    border :none;
+    background-color: #eeeeee;
+    margin-bottom: 0.5em
+}
+#continut_calendar{
+   width: 100%;
+}
+
+#desc_producator{
+    width: 100%;
+    min-width: 350px;
+    height: 1.5em;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    margin-right: 2em;
+    min-height: 292px;
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+}
+#desc{
+    margin-top: 1em;
+    font-size: 0.8em;
+    word-wrap: normal;
+    color: #aaaaaa;
+}
+#desc span{
+    font-size: 0.8em;
+    color: #485E14;
+}
+
+.pika-single {
+  width: 274px;
+  z-index: 300;
+}
+.pika-lendar {
+  float: left;
+  width: 240px;
+  margin: 16px;
+}
+/*****************************
+    ---------------------
+******************************/
+
+
+
+/*****************************
+    Stiluri pentru mobile
+******************************/
+
+@media (max-width: 480px) {
+    .panou_info{
+        width: 90%;
+    }
+
+    .meniu-item {
+        margin: 0;
+        padding: 6px;
+        width: 28.5% ;
+        clear: both;
+    }
+    .info_click{
+        overflow: hidden;
+        width: 40px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .info_nume{
+        width: 55%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        float:left;
+    }
+
+    .info_desc{
+        display: inline-block;
+        font-size: 0.8em;
+    }
+    .info_data{
+        float: right;
+    }
+
+    .titlu span{
+        display: none;
+    }
+
+}
+
+
+
